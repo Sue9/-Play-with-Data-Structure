@@ -9,5 +9,15 @@ public class Main {
         {
             arr.addLast(i);
         }
+
+        System.out.println(arr);
+
+        arr.addIndex(1, 100);
+        System.out.println(arr);
+
+        arr.addFirst(-1);
+        System.out.println(arr);
+
+
     }
 }
