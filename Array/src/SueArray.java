@@ -1,12 +1,10 @@
-package com.company;
-
-public class SueArray {
-    private int[] data;
+public class SueArray<E> {
+    private E[] data;
     private int size;
 
     //constructor:using parameter capacity to construct SueArray
     public SueArray (int capacity) {
-        data = new int[capacity];
+        data = (E[])new Object[capacity];
         size = 0;
     }
 
@@ -30,7 +28,7 @@ public class SueArray {
     }
 
     //add an element e at the end of the array
-    public void addLast(int e){
+    public void addLast(E e){
         if(size == data.length)
             throw new IllegalArgumentException("AddLastFailed. Arrayisfull.");
 
@@ -39,12 +37,12 @@ public class SueArray {
     }
 
     //add an element e at the beginning of the array
-    public void addFirst(int e){
+    public void addFirst(E e){
         addIndex(0,e);
     }
 
     //add an element e at any position Index of the array
-    public void addIndex(int index,int e){
+    public void addIndex(int index,E e){
         if(size == data.length)
             throw new IllegalArgumentException("AddIndexFailed. Array is full.");
 
@@ -62,23 +60,24 @@ public class SueArray {
     }
 
     //the the element of the input index
-    int get(int index){
+    public E get(int index){
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("Get failed. Index is  illegal.");
         return data[index];
     }
 
     //modify the element by given index and value
-    void set(int index, int e){
+    void set(int index, E e){
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("Get failed. Index is  illegal.");
         data[index] = e;
     }
 
     //check if e exists in this array
-    public boolean contains(int e){
+    public boolean contains(E e){
         for(int i = 0; i < size; i++){
-            if (data[i] == e)
+            //equals(): compare values
+            if (data[i].equals(e))
                 return true;
         }
         return false;
@@ -86,17 +85,48 @@ public class SueArray {
 
     //check if e exists in this array, and return its index
     //if e does not exist, return -1
-    public int find(int e){
+    public int find(E e){
         for(int i = 0; i < size; i++){
-            if (data[i] == e)
+            if (data[i].equals(e))
                 return i;
         }
         return -1;
     }
 
+    //remove value in given index
+    //return its element
+    public E removeIndex(int index){
+        if(index < 0 || index >= size)
+            throw new IllegalArgumentException("Get failed. Index is  illegal.");
+        E ret = data[index];
 
-    
+        for(int i = index + 1; i < size; i++){
+            data[i - 1] = data[ i ];
+        }
 
+        size --;
+        data[size] = null; // loitering objects != memory leak
+        return ret;
+    }
+
+    //remove the first element in the array, return its value
+    public E removeFirst(){
+        return removeIndex(0);
+    }
+
+    //remove the last element in the array, return its value
+    public E removeLast(){
+        return removeIndex(size - 1);
+    }
+
+    //remove the first element e from the array
+    public void removeElement(E e){
+        int index = find(e);
+        if(index != -1){
+            removeIndex(index);
+        }
+
+    }
 
     @Override
     public String toString(){
