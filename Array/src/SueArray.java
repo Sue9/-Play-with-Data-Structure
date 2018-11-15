@@ -27,6 +27,26 @@ public class SueArray<E> {
         return size == 0;
     }
 
+
+
+    //add an element e at any position Index of the array
+    public void addIndex(int index,E e){
+
+        if(index <0 || index>=data.length){
+            throw new IllegalArgumentException("AddIndex failed. Require index >= 0 and index <= size");
+        }
+
+        if(size == data.length)
+            resize(2 * data.length);
+
+        for(int i = size; i>index; i--){
+            data[i]=data[i-1];
+        }
+
+        data[index]=e;
+        size++;
+    }
+
     //add an element e at the end of the array
     public void addLast(E e){
         if(size == data.length)
@@ -39,24 +59,6 @@ public class SueArray<E> {
     //add an element e at the beginning of the array
     public void addFirst(E e){
         addIndex(0,e);
-    }
-
-    //add an element e at any position Index of the array
-    public void addIndex(int index,E e){
-        if(size == data.length)
-            throw new IllegalArgumentException("AddIndexFailed. Array is full.");
-
-
-        if(index <0 || index>=data.length){
-            throw new IllegalArgumentException("AddIndex failed. Require index >= 0 and index <= size");
-        }
-
-        for(int i = size; i>index; i--){
-            data[i]=data[i-1];
-        }
-
-        data[index]=e;
-        size++;
     }
 
     //the the element of the input index
@@ -106,6 +108,10 @@ public class SueArray<E> {
 
         size --;
         data[size] = null; // loitering objects != memory leak
+
+        if(size == data.length / 4 && data.length != 0)
+            resize(data.length / 2);
+
         return ret;
     }
 
@@ -144,4 +150,12 @@ public class SueArray<E> {
         return res.toString();
     }
 
+
+    private void resize(int newCapacity){
+        E[] newData = (E[])new Object[newCapacity];
+        for(int i = 0; i < size; i++){
+            newData[i] = data[i];
+        }
+        data = newData;
+    }
 }

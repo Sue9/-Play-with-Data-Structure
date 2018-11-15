@@ -1,0 +1,35 @@
+2-8 Time Complexity
+
+(1) Function Add:
+addLast(e):	 	O(1)
+addFirst(e):	O(n)
+addIndex(e):	O(n)	This is done based on Probability: O(n/2)
+
+resize():		O(n)
+
+Totally, in general, we consider Add as O(n)
+
+
+(2) Function Remove:
+removeLast(e):	O(1)
+removeFirst(e):	O(n)
+removeIndex(e):	O(n)
+
+resize():		O(n)
+
+Totally, remove takes O(n)
+
+(3) Modify
+set(index, e):	O(1)
+
+(4) Find
+get(index):		O(1)
+contains(e):	O(n)
+find(e): 		O(n)
+
+
+2-9 Amortized Time Complexity
+addLast(e)    + resize() :	O(1)
+removeLast(e) + resize() : 	O(1)
+
+
