@@ -1,3 +1,7 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class BST<E extends Comparable<E>> {
     private class Node{
         public E e;
@@ -81,6 +85,97 @@ public class BST<E extends Comparable<E>> {
         System.out.println(node.e);
         preOrder(node.left);
         preOrder(node.right);
+    }
+
+    //preOrder not recursive
+    public void preOrderNR(){
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.empty()){
+            Node cur = stack.pop();
+            System.out.println(cur.e);
+            if(cur.right != null)
+                stack.push(cur.right);
+            if(cur.left != null)
+                stack.push(cur.left);
+        }
+    }
+
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    private void inOrder(Node node){
+        if(node == null)
+            return;
+
+        inOrder(root.left);
+        System.out.println(node.e);
+        inOrder(root.right);
+    }
+
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private void postOrder(Node node){
+        if(node == null)
+            return;
+
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.e);
+    }
+
+
+    public void levelOrder(){
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node cur = q.remove();
+            System.out.println(cur.e);
+            if(cur.left != null)
+                ((LinkedList<Node>) q).add(cur.left);
+            if(cur.right != null)
+                ((LinkedList<Node>) q).add(cur.right);
+        }
+    }
+
+
+    public E minimum(){
+        if(size == 0)
+            throw new IllegalArgumentException("BST is empty!");
+        return minimum(root).e;
+    }
+
+    private Node minimum(Node node){
+        if(node.left == null)
+            return node;
+        return minimum(node.left);
+    }
+
+    public E maximum(){
+        if(size == 0)
+            throw new IllegalArgumentException("BST is empty!");
+        return maximum(root).e;
+    }
+
+    private Node maximum(Node node){
+        if(node.right == null)
+            return node;
+        return maximum(node.right);
+    }
+
+
+    public E removeMin(){
+        E ret = minimum();
+        removeMin(root);
+        return ret;
+    }
+
+    private Node removeMin(Node node){
+        if(node.left == null)
+
     }
 
     @Override

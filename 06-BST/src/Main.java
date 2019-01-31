@@ -13,6 +13,7 @@ public class Main {
         //  / \    \   //
         // 2  4     8  //
         /////////////////
-        bst.preOrder();
+//        bst.preOrder();
+        bst.levelOrder();
     }
 }
