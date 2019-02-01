@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d133d117-e7a8-4520-a7fe-81d2d8bb0079" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="d133d117-e7a8-4520-a7fe-81d2d8bb0079" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +13,11 @@
     <session id="1361582102">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.33" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,15 +57,9 @@
         <entry file="file://$PROJECT_DIR$/src/BST.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
-              <caret line="177" selection-start-line="177" selection-end-line="177" />
+              <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#950#951#0" expanded="true" />
-                <element signature="e#990#991#0" expanded="true" />
-                <element signature="e#1577#1578#0" expanded="true" />
-                <element signature="e#1602#1603#0" expanded="true" />
-                <element signature="e#1815#1816#0" expanded="true" />
-                <element signature="e#1842#1843#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,8 +86,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="547" />
-    <option name="y" value="33" />
+    <option name="x" value="436" />
+    <option name="y" value="86" />
     <option name="width" value="1180" />
     <option name="height" value="828" />
   </component>
@@ -108,8 +99,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -126,6 +115,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,9 +165,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="547" y="33" width="1180" height="828" extended-state="0" />
+    <frame x="436" y="86" width="1180" height="828" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11339286" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11517857" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -218,15 +209,9 @@
     <entry file="file://$PROJECT_DIR$/src/BST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
-          <caret line="177" selection-start-line="177" selection-end-line="177" />
+          <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-            <element signature="e#1577#1578#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-            <element signature="e#1842#1843#0" expanded="true" />
           </folding>
         </state>
       </provider>
