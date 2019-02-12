@@ -44,3 +44,18 @@
 | 					| 5-6 Recursion Debug
 | 					| 5-7 More about Linked List
 | 					|
+| 六、 BST 			| 6-1 Why tree
+| 					| 6-2 BST basics
+| 					| 6-3 add( )
+| 					| 6-4 Optimised add( )
+| 					| 6-5 contains( )
+| 					| 6-6 Preorder
+| 					| 6-7 Inorder & Postorder
+| 					| 6-8 More on traversals
+| 					| 6-9 Preorder(iteratively)
+| 					| 6-10 Breadth First Search
+| 					| 6-11 removeMin( ) & removeMax( )
+| 					| 6-12 remove( ): Hibbard Deletion
+| 					| 6-13 More about BST
+| 					|
+
