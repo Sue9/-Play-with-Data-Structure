@@ -169,13 +169,76 @@ public class BST<E extends Comparable<E>> {
 
     public E removeMin(){
         E ret = minimum();
-        removeMin(root);
+        root = removeMin(root);
         return ret;
     }
 
     private Node removeMin(Node node){
-        if(node.left == null)
+        if(node.left == null){
+            Node rightNode = node.right;
+            node.right = null;
+            size --;
+            return rightNode;
+        }
 
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+    public E removeMax(){
+        E ret = maximum();
+        root = removeMax(root);
+        return ret;
+    }
+
+    private Node removeMax(Node node){
+        if(node.right == null){
+            Node leftNode = node.left;
+            node.left = null;
+            size --;
+            return leftNode;
+        }
+
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+    public void remove(E e){
+        root = remove(root, e);
+    }
+
+    private Node remove(Node node, E e){
+        if(node == null)
+            return null;
+
+        //e < node.e
+        if(e.compareTo(node.e) < 0)
+            node.left = remove(node.left, e);
+        else if(e.compareTo(node.e) > 0)
+            node.right = remove(node.right, e);
+        else{ // e == node.e
+            if(node.left == null){
+                Node rightNode = node.right;
+                node.right = null;
+                size --;
+                return rightNode;
+            }
+
+            if(node.right == null){
+                Node leftNode = node.left;
+                node.left = null;
+                size --;
+                return leftNode;
+            }
+
+            Node successor = minimum(node.right);
+            successor.left = node.left;
+            successor.right =removeMin(node.right);
+
+            node.left = null;
+            node.right = null;
+            return successor;
+        }
     }
 
     @Override
